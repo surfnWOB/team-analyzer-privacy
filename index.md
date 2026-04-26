@@ -1,15 +1,19 @@
 # Privacy Policy — Team Analyzer for Pokémon Showdown
 
-_Last updated: 2026-04-25_
+_Last updated: 2026-04-26_
 
-Team Analyzer is a browser extension that adds a defensive type matrix to the Pokémon Showdown teambuilder.
+Team Analyzer is a browser extension that adds a defensive type matrix to the Pokémon Showdown teambuilder, and also renders the same matrix alongside shared team pastes on `pokepast.es`.
+
+## Where the extension runs
+
+The extension only activates on two sites: `play.pokemonshowdown.com` (the Showdown teambuilder) and `pokepast.es` (rendering the analyzer panel beside shared pastes). It does not run on any other site.
 
 ## What we collect
 
-When the analyzer panel mounts, the extension sends a small set of anonymous usage events to [PostHog](https://posthog.com), our analytics provider. Each event includes:
+When the analyzer panel mounts — or when a pokepaste fails to fetch or parse — the extension sends a small set of anonymous usage events to [PostHog](https://posthog.com), our analytics provider. Each event includes:
 
 - A random UUID generated locally on first run, used only to tell unique installs apart. It never leaves your browser except as part of these events.
-- The event name (e.g. that the panel mounted, which placement mode it used, which battle format was detected, or that a handled error occurred).
+- The event name. The current set is: `panel_mounted`, `extension_installed`, `placement_mode`, `format_detected`, `error_caught`, `placement_remount`, `pokepaste_fetch_failed`, and `pokepaste_parse_failed`.
 - A timestamp.
 
 We do **not** collect:
